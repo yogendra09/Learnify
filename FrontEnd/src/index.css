@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: gilroy;
+}
+
+/* #8B77E8 base color */
+/* #CDC2FF second color */
+
+.mainlogoheading {
+  font-family: "Dancing Script", cursive;
+  font-weight: 700;
+  font-size: 30px;
+}
+::-webkit-scrollbar{
+    width: 10px;
+    background-color: #eae5ff;
+}
+::-webkit-scrollbar-thumb{
+    width: 10px;
+    background-color: #ac99ff;
+    border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:hover{
+    background-color: #7b5ef8;
+
+}
