@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import Navbar from "../Utils/Navbar";
+import Navbar from "../utils/Navbar";
 import axios from "../api/Axios"
 import { loginContext } from "../context/Logincontext";
 import Courese from "../components/Courses";

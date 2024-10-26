@@ -51,6 +51,7 @@ const Register = () => {
     event.preventDefault();
     if (validate()) {
       // Handle form submission
+     
       try {
         await axios.post("/user/signup", {email, firstname, lastname, password});
         setLogin(true)

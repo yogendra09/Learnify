@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Navbar from './Utils/Navbar';
-import Footer from './Utils/Footer';
+import Navbar from './utils/Navbar';
+import Footer from './utils/Footer';
 import Router from './routes/Router';
 import Loading from './components/Loading';
 import { useLocation } from 'react-router-dom';
