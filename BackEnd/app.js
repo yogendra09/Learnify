@@ -5,7 +5,7 @@ const Razorpay = require("razorpay")
 const { v4: uuidv4 } = require('uuid')
 
 // //dotnev
-require("dotenv").config();
+require("dotenv").config({path:".env"});
 
 app.use(
   cors({
@@ -13,7 +13,6 @@ app.use(
     credentials: true,
   })
 );
-
 //logger
 const logger = require("morgan");
 app.use(logger("tiny"));
