@@ -11,7 +11,12 @@ const Logincontext = (props) => {
 
   const userloggedin = async () => {
     try {
-      await axios.get("/");
+      const { data }=await axios.get("/");
+      if (!data) {
+        userloggedout()
+        localStorage.removeItem("token");
+        return;
+      }
       setLogin(true);
     } catch (error) {
       console.log(error);
@@ -22,6 +27,7 @@ const Logincontext = (props) => {
   const userloggedout = async () => {
     try {
       await axios.get("/user/signout");
+      localStorage.removeItem("token");
       setLogin(false);
     } catch (error) {
       console.log(error);

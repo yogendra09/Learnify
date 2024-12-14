@@ -41,8 +41,10 @@ const Login = () => {
       // Handle form submission
       
       try {
-        await axios.post("/user/signin" , {email,password})
-        console.log('Form submitted');
+       const {data} = await axios.post("/user/signin" , {email,password})
+       console.log(data.token);
+       
+       localStorage.setItem("token", data.token);
         setLogin(true)
         navigate("/")
       } catch (error) {

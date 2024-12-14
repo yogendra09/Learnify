@@ -11,8 +11,9 @@ exports.homepage = catchAsyncErrors(async (req, res, next) => {
 })
 
 exports.currentuser = catchAsyncErrors(async (req, res, next) => {
+    console.log(req.body.headers.Authorization)
     let student = await studentModel.findById(req.id).exec()
-    res.json({ student })
+    res.json({ student,token:req.body.headers.Authorization })
 })
 
 
@@ -24,7 +25,7 @@ exports.usersignup = catchAsyncErrors(async (req, res, next) => {
 
 exports.usersignin = catchAsyncErrors(async (req, res, next) => {
     const student = await studentModel.findOne({ email: req.body.email }).select("+password").exec()
-
+     
     if (!student) {
         return next(new ErorrHander("User not found With This email address", 404))
     }
